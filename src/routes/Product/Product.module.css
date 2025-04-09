@@ -1,4 +1,45 @@
 .wrapper {
-  width: 20%;
-  margin: 0 auto;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.description-wrapper {
+  width: 30%;
+}
+
+.details-wrapper {
+  width: 30%;
+}
+.img-wrapper {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > img {
+    max-width: 300px;
+    min-height: 300px;
+  }
+}
+
+.price-wrapper {
+  min-height: 50px;
+}
+
+.price {
+  font-weight: 600;
+}
+
+.add-btn {
+}
+
+.product-title {
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.product-description {
 }

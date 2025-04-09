@@ -20,24 +20,29 @@ export default function Product() {
   return (
     <>
       {product && (
-        <div>
+        <main>
           <section className={`${styles.wrapper}`}>
-            <div>
-              <img
-                width="300px"
-                height="300px"
-                src={product.image}
-                alt={product.title}
-              />
+            <div className={styles.descriptionWrapper}>
+              <p className={styles.productTitle}>{product.title}</p>
+              <p className={styles.productDescription}>{product.description}</p>
             </div>
-            <p>{product.title}</p>
-            <p>${product.price}</p>
-            <button onClick={() => handleAddToCart(product)}>ADD TO BAG</button>
-            {renderQuantity()}
-            <p>{product.category}</p>
-            <p>{product.description}</p>
+            <div className={styles.imgWrapper}>
+              <img src={product.image} alt={product.title} />
+            </div>
+            <div className={styles.detailsWrapper}>
+              <div className={styles.priceWrapper}>
+                <p className={styles.price}>${product.price}</p>
+                {renderQuantity()}
+              </div>
+              <button
+                className={styles.addBtn}
+                onClick={() => handleAddToCart(product)}
+              >
+                ADD TO BAG
+              </button>
+            </div>
           </section>
-        </div>
+        </main>
       )}
     </>
   );
