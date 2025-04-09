@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
+import logoUrl from '../../assets/logo-white-text.svg';
 
 export default function Header(props) {
   return (
@@ -22,11 +23,7 @@ export default function Header(props) {
         <ul className={`${styles.logoWrapper} ${styles.navList}`}>
           <li>
             <Link to="/home">
-              <img
-                className={styles.logo}
-                src="/src/assets/logo-white-text.svg"
-                alt="logo"
-              />
+              <img className={styles.logo} src={logoUrl} alt="logo" />
             </Link>
           </li>
         </ul>
