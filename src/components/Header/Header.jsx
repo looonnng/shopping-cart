@@ -24,7 +24,7 @@ export default function Header(props) {
             <Link to="/home">
               <img
                 className={styles.logo}
-                src="/public/logo-white-text.svg"
+                src="/src/assets/logo-white-text.svg"
                 alt="logo"
               />
             </Link>
