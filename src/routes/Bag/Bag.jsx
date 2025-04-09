@@ -1,34 +1,62 @@
 import { useOutletContext } from 'react-router-dom';
+import styles from './Bag.module.css';
 
-const Bag = () => {
-  const [bag, , handleRemove] = useOutletContext();
-  return (
-    <>
-      {bag.length > 0 &&
-        bag.map((item, index) => (
-          <div key={index}>
-            <img
-              width="200px"
-              height="200px"
-              src={item.image}
-              alt={item.title}
-            />
-            <p>{item.title}</p>
-            <p>${item.price}</p>
-            <p>Quantity:{item.quantity}</p>
-            <p>{item.category}</p>
-            <button onClick={() => handleRemove(item, index)}>Remove</button>
-          </div>
-        ))}
+function BagItems(props) {
+  if (props.bag.length > 0) {
+    const itemElements = props.bag.map((item, index) => (
+      <div className={styles.itemWrapper} key={index}>
+        <div className={styles.itemImgWrapper}>
+          <img className={styles.itemImg} src={item.image} alt={item.title} />
+        </div>
+        <div className={styles.itemDetails}>
+          <ul>
+            <li>
+              <p>{item.title}</p>
+            </li>
+            <li>
+              <p>${item.price}</p>
+            </li>
+          </ul>
+          <ul className={styles.quantityWrapper}>
+            <li>
+              <p>Quantity:{item.quantity}</p>
+            </li>
+            <li className={styles.removeBtnWrapper}>
+              <button onClick={() => props.handleRemove(item, index)}>
+                Remove
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    ));
 
+    const totalElement = (
       <h1>
-        Total:
-        {bag
+        Total: $
+        {props.bag
           .map((item) => Number(item.price) * item.quantity)
           .reduce((prev, curr) => prev + curr, 0)
           .toFixed(2)}
       </h1>
-    </>
+    );
+
+    return (
+      <>
+        <section className={styles.bagItems}>{itemElements}</section>
+        <section className={styles.bagTotal}>{totalElement}</section>
+      </>
+    );
+  }
+}
+
+const Bag = () => {
+  const [bag, , handleRemove] = useOutletContext();
+
+  return (
+    <main className={styles.wrapper}>
+      <BagItems bag={bag} handleRemove={handleRemove} />
+    </main>
   );
 };
 

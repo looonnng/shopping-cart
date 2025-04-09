@@ -1,0 +1,50 @@
+.wrapper {
+  width: 70%;
+  margin: 2rem auto;
+  
+  display: flex;
+}
+
+.bag-items {
+  width: 50%;
+  max-width: 100%;
+}
+.bag-total {
+  width: 30%;
+  max-width: 100%;
+  margin-left: auto;
+}
+
+.item-details {
+  flex: 1;
+}
+
+.item-wrapper {
+  display: flex;
+}
+
+.item-wrapper + .item-wrapper {
+  margin-top: 2rem;
+}
+
+.item-img-wrapper {
+  width: 10%;
+}
+
+.item-img {
+  width: 100%;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.itemTitleWrapper {
+  flex: 1;
+}
+
+.quantity-wrapper {
+  display: flex;
+}
+
+.remove-btn-wrapper {
+  margin-left: auto;
+}
