@@ -11,24 +11,24 @@ import Category from './routes/Category/Category.jsx';
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/shopping-cart',
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: '/home',
+        path: '/shopping-cart/home',
         element: <HomePage />,
       },
       {
-        path: '/category/:categoryId',
+        path: '/shopping-cart/category/:categoryId',
         element: <Category />,
       },
       {
-        path: '/product/:productId',
+        path: '/shopping-cart/product/:productId',
         element: <Product />,
       },
       {
-        path: '/bag',
+        path: '/shopping-cart/bag',
         element: <Bag />,
       },
     ],

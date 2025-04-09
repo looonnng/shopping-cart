@@ -8,21 +8,21 @@ export default function Header(props) {
       <nav>
         <ul className={`${styles.navList} ${styles.leftList}`}>
           <li>
-            <Link to="/category/men's%20clothing">MENSWEAR</Link>
+            <Link to="/shopping-cart/category/men's%20clothing">MENSWEAR</Link>
           </li>
           <li>
-            <Link to="/category/women's%20clothing">WOMENSWEAR</Link>
+            <Link to="/shopping-cart/category/women's%20clothing">WOMENSWEAR</Link>
           </li>
           <li>
-            <Link to="/category/electronics">EVERYTHING ELSE</Link>
+            <Link to="/shopping-cart/category/electronics">EVERYTHING ELSE</Link>
           </li>
           <li>
-            <Link to="/category/jewelery">SALE</Link>
+            <Link to="/shopping-cart/category/jewelery">SALE</Link>
           </li>
         </ul>
         <ul className={`${styles.logoWrapper} ${styles.navList}`}>
           <li>
-            <Link to="/home">
+            <Link to="/shopping-cart/home">
               <img className={styles.logo} src={logoUrl} alt="logo" />
             </Link>
           </li>
@@ -38,7 +38,7 @@ export default function Header(props) {
             <Link>WISH LIST</Link>
           </li>
           <li>
-            <Link to="/bag">BAG ({props.bag ? props.bag.length : '0'})</Link>
+            <Link to="/shopping-cart/bag">BAG ({props.bag ? props.bag.length : '0'})</Link>
           </li>
         </ul>
       </nav>

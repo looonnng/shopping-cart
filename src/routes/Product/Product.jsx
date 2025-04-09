@@ -4,7 +4,7 @@ import styles from './Product.module.css';
 
 export default function Product() {
   const products = useParams();
-  const [bag, handleAddToCart, handleRemoveFromCart] = useOutletContext();
+  const [bag, handleAddToCart, _] = useOutletContext();
   const { product, error, isLoading } = useFetchProduct(products.productId);
 
   if (isLoading) return <h1>Loading...</h1>;

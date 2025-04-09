@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const renderProducts = (products) =>
   products.map((prod) => (
     <Link
-      to={`/product/${prod.id}`}
+      to={`/shopping-cart/product/${prod.id}`}
       className={`${styles.productCard}`}
       key={prod.id}
     >

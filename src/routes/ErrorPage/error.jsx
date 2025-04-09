@@ -5,7 +5,7 @@ const ErrorPage = () => {
   return (
     <main className={`${styles.errorPage} flex-center`}>
       <h1>Not all who wander are lost!</h1>
-      <Link to="/home">Return to Homepage</Link>
+      <Link to="/shopping-cart/home">Return to Homepage</Link>
     </main>
   );
 };
