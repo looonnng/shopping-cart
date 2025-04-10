@@ -55,6 +55,7 @@ const Bag = () => {
 
   return (
     <main className={styles.wrapper}>
+      {bag.length === 0 && <h1>Bag is empty</h1>}
       <BagItems bag={bag} handleRemove={handleRemove} />
     </main>
   );
